@@ -61,18 +61,25 @@ biggest or second biggest part of the article
 
 ### Reactive Programming
 
-Write about reactive programming. Keep it short and sweet, too much to cover in
-depth I think.
+---
+Topics to cover:
+Dataflow, propagation of state through dependency graphs. Maybe some graphics?
+
+Keep implementation details out of it, stick to the theoretical stuff.
 
 ### Functional Programming
 
-Write about functional programming. Also a short and sweet section, will most
-likely have been covered earlier or later in the magazine.
+---
+Topics to cover:
+Combinators, sequences, immutability, side-effect free.
+
+Do we mention monads here, or leave it out?
 
 ### Functional Reactive Programming
 
-Write about how the two paradigms come together to form FRP. What the synergy of
-FP and RP means on a theoretical level.
+---
+Some of the stuff in the introduction to this section could probably live here instead.
+
 
 ## FRP in practice
 
