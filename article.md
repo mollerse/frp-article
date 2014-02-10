@@ -34,6 +34,28 @@ FRAN and academic beginnings.
 
 ## Theoretical foundation
 
+Functional reactive programming is the combination of two other programming
+paradigms, functional and reactive programming. At its most basic level, FRP is
+about abstractions for representing a value as it changes over time. FRP has two
+different ways of representing a value that changes with time; continous and
+discrete.
+
+A continous value, or behavior as it is commonly known in FRP, is the
+representation of something that always has a value when observed. For instance
+the current time or the height of a person. It does never not have a value.
+Discrete values, on the other hand, only have a value at certain times.
+
+Historically, this has been difficult to achieve using traditional imperative
+programming. The imperative programming paradigm is temporally discrete in
+nature, which has only allowed for indirect representation of discretely
+evolving values.
+
+Combining the notion of dataflow from reactive programming and side-effect free
+combinators from functional programming, we can define values that represent the
+two concepts of values over time directly. This gives us temporal reasoning as a
+first class citizen.
+
+---
 Write about the theoretical foundation for FRP. This will most likely be the
 biggest or second biggest part of the article
 
