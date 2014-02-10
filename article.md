@@ -61,6 +61,24 @@ biggest or second biggest part of the article
 
 ### Reactive Programming
 
+Reactive programming is a programming paradigm that deals primarily with the
+flow of data and semantics for expressing how changes in state propagates
+through a dependency graph. Using reactive programming, a programmer can easily
+express data flows and set up dependencies and leave the propagation of change
+to the execution model of the language or liberary used.
+
+The best example of data flow is the interaction between cells in a spreadsheet.
+If you change one cell, another cell which has a depencendy on that cell would
+automatically be updated. For instance with one cell being the sum of two other
+cells.
+
+This concept of data flow bears a resemblence to the well known observer
+pattern. Using the reactive semantics allows us to express the same as the
+observer pattern, but easier and with more granularity. Where the observer
+pattern deals with whole objects, reactive data flows would be applicable to
+attributes of objects.
+
+
 ---
 Topics to cover:
 Dataflow, propagation of state through dependency graphs. Maybe some graphics?
