@@ -135,12 +135,10 @@ We begin by initiating some event streams we shall use to compose
 a property of mouse movements.
 
 ```javascript
-
 var $svg = $('svg'),
     mouseMove = bacon.fromEventTarget($svg, 'mousemove'),
     mouseDown = bacon.fromEventTarget($svg, 'mousedown').map(true),
     mouseUp = bacon.fromEventTarget($svg, 'mouseup').map(false);
-
 ```
 
 In this code we start of by fetching our SVG element. With that element,
@@ -246,7 +244,6 @@ mouseNewXY
   .merge(bacon.fromEventTarget(socket, 'data'))
   .map(toCircle)
   .assign($svg[0], 'appendChild');
-
 ```
 
 In this example we say that the socket is a socket instance of
