@@ -254,8 +254,6 @@ socket.io, and that it emits our mouse data on the channgel `data`.
 
 In addition we would have to emit data using our `mouseNewXY` data type.
 
---- The example itself. Implement an interface or some collaborative thing
-
 ## Summary / Wrapup
 
 Write a short summary here.
