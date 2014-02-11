@@ -3,12 +3,13 @@
 Short ingress with some highlights and summaries of what FRP is and what we will
 cover in the article
 
-## Background / History
+## Background and History
 
-Functional Reactive Programming is not a new concept in computer science, but stems
-from 1997. Conal Elliot from the Microsoft Research Group and Paul Hudak from
-Yale University released the research paper Functional Reactive Animation in the
-proceedings of International Conference on Functional Programming [1].
+Functional Reactive Programming is not a new concept in computer science. It can
+be traced to 1997, when Conal Elliot, from the Microsoft Research Group,
+and Paul Hudak, from Yale University released, the research paper
+"Functional Reactive Animation" in the proceedings of International Conference
+on Functional Programming [1].
 
 The academic paper introduces a collection of data types and functions in a
 system called FRAN (**F**unctional **R**eactive **AN**imations). FRAN in
@@ -20,17 +21,22 @@ is an easy extendable functional programming language. As Haskell may have some
 problems with space leaks, FRAN did aswell. To try to fix this, Paul Hudak
 (et. al.) introduced Real Time FRP (RT-FRP) in a paper from 2001 [3]. RT-FRP
 made some simplifications to the model, but in turn lost some of the
-expressive-ness of the FRAN system. A short year after introducing RT-FRP,
+expressiveness of the FRAN system. A short year after introducing RT-FRP,
 the Yale team also released Event-Driven FRP, focusing on value changes
 triggered by events and propagating values only on these events [4].
 
+Some years later, Conal Elliot published the paper "Push-Pull Functional
+Reactive Programming" (2009) [5]. In this paper he described a way to implement
+FRP with a more modernized interface, and where the reactive values had a more
+simplified semantic. All reactive values were described with push- and pull-based
+evaluation.
 
----
-
-[Read more on Elm thesis](http://www.testblogpleaseignore.com/wp-content/uploads/2012/04/thesis.pdf)
-
-Short background of FRP, maybe with some history. Mention the birth of FRP with
-FRAN and academic beginnings.
+In later years, several different implementations and libraries have arisen.
+Some examples are the compile-to-javascript languages
+[Elm](http://elm-lang.org) and [Flapjax](http://www.flapjax-lang.org/),
+or [Bacon.js](https://github.com/baconjs/bacon.js) – which is written
+completely in Javascript. There are also implementations in languages like
+C#, Java, Scala, Objective-C, Ruby, and more.
 
 ## Theoretical foundation
 
@@ -130,3 +136,4 @@ Write a short summary here.
 [2]: http://conal.net/papers/ActiveVRML/
 [3]: http://dl.acm.org/citation.cfm?id=507654
 [4]: http://link.springer.com/chapter/10.1007/3-540-45587-6_11
+[5]: http://conal.net/papers/push-pull-frp/push-pull-frp.pdf
