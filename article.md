@@ -75,11 +75,35 @@ attributes of objects.
 
 ### Functional Programming
 
----
-Topics to cover:
-Combinators, sequences, immutability, side-effect free.
+Achieving rigorous and formal reasoning in combination with user interfaces
+was the original goal of FRP. This trait is enabled by what is known as pure
+functions. Pure functions are functions that depend only on their inputs and
+not the state of the program being run.
+
+Pure functions also does not mutate anything outside of itself. This helps
+eliminating side effects which is one of the main reasons pure functions
+enable formal reasoning and semantic determinism.
+
+Functions make up the core building block of functional programming, but they
+would not be very useful if they could not be composed and combined.
+Composition of functions depend on another trait of functional programming,
+which is immutability. Immutability means that once a value is instansiated it
+does not change. This means that we can take functions or data and combine
+them in many different ways without affecting the original representation of
+the function or data.
+
+To compose functions we use another class of functions known as higher order
+functions. These take functions as inputs and produce functions as output.
+This class of functions are also known as combinators. The most well-known
+combinators are map, reduce and filter.
+
+The reason immutability and purely functional functions are hard to reconcile
+with real world programming is that most important values are mutable to
+change. This becomes especially apparent in user interfaces where every user
+action mutates a piece of the program state.
 
 ### Functional Reactive Programming
+
 FRP has two different ways of representing a value that changes with time;
 continous and discrete. A continous value, or behavior as it is commonly known
 in FRP, is the representation of something that always has a value when
