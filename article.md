@@ -88,7 +88,7 @@ combinators from functional programming, we can define values that represent the
 two concepts of values over time directly. This gives us temporal reasoning as a
 first class citizen.
 
-## FRP in practice
+## In Practice
 
 Maybe a section with a more practical look at FRP. Which problems does it solve
 and why does it offer a worthwhile solution? This is probably the place to
@@ -96,23 +96,60 @@ mention animation, interfaces and asynchronous/evented programming.
 
 Maybe also mention Reactive Extensions and similar libs here.
 
-## FRP example
+## Practical Example
 
-A short example using Bacon.js.
+One way to use functional reactive programming in Javascript is with
+the library Bacon.js. Bacon.js is created by Finish developer
+Juha Paananen from Reaktor. In this section we will see how Bacon.js
+can be used to achieve FRP in the browser.
 
-### Bacon.js introduction
+We will use Bacon.js to implement a simple SVG dot-drawer:
+tracking the mouse movement and when the mouse button is pressed draw
+dots every `N` milliseconds.
 
-Write a short introduction to Bacon.js and its API, mention EventStreams and
-Properties. Also mention terminating functions (like onValue, assign, log etc)
+### Bacon.js Introduction
 
-### Bacon.js example
+As with theoretical FRP, we have events and behaviours in Bacon.js, but
+instead of calling it a behaviour we call it a Property. A property always
+has a value, but an event stream is discrete.
 
-We will implement a simple SVG dot-drawer: tracking the mouse movement
-and when the mouse is clicked draw dots every `N` milliseconds.
+In Bacon.js we can wrap event sources to reactive data types using different
+functions. E.g. `Bacon.fromEventTarget()` wraps events from DOM or jQuery events,
+objects from Node.JS' EventEmitter, or `Bacon.fromPromise()` creates
+reactive data from promises. There are also several other methods, like creating
+data types from callbacks, from arrays, constant intervals and polling.
 
-This kind of state management and input/output could easily become a
-very cumbersome task using traditional imperative code, but using
-FRP, this should be a breeze.
+In the most simplest form we can react to an event like so:
+
+```javascript
+Bacon.fromEventTarget($("button"), "click")
+  .onValue(function() { console.log("FRP!"); })
+```
+
+We see that we can print string when a button is clicked. In most cases,
+Bacon.JS returns a new event stream or property, but `.onValue` returns
+a function to unsubscribe to the events. Bacon.js uses lazy evaluation
+internally, only pushing values if there is subscribers. For example,
+without adding `.onValue` (or other methods adding subscribers,
+like `assign`) no value will get pushed.
+
+```javascript
+Bacon.fromEventTarget($("button"), "click")
+  .doAction(function() { console.log("FRP!"); })
+```
+
+Prints nothing, even if the button is clicked.
+
+But Bacon.js can do much, much more than just printing values on clicks.
+We can start getting creative by using regular functional operations like
+`map`, `filter`, `reduce` and more. We will see more of this in the next
+section, where we implement our example.
+
+### Bacon.js Example Implementation
+
+The kind of state management and input/output handling this example demands
+could easily become a very cumbersome task using traditional imperative
+code. Using FRP, how ever, this should be a breeze.
 
 We begin by initiating some event streams we shall use to compose
 a property of mouse movements.
