@@ -20,9 +20,10 @@ and Paul Hudak, from Yale University released, the research paper
 on Functional Programming [1].
 
 The academic paper introduces a collection of data types and functions in a
-system called FRAN (**F**unctional **R**eactive **AN**imations). FRAN in
-turn is preceeded by work done by Conal Elliot and the ActiveVRML modeling
-language. ActiveVRML was a declerative modeling language for defining simple, sophisticated and interactive animations [2].
+system called FRAN (**F**unctional **R**eactive **AN**imations). FRAN in turn
+is preceeded by work done by Conal Elliot and the ActiveVRML modeling
+language. ActiveVRML was a declerative modeling language for defining simple,
+sophisticated and interactive animations [2].
 
 The implementation of FRAN was based on the programming language Haskell, which
 is an easy extendable functional programming language. As Haskell may have some
