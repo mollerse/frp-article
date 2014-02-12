@@ -41,14 +41,18 @@ C#, Java, Scala, Objective-C, Ruby, and more.
 ## Theoretical foundation
 
 Functional reactive programming is the combination of two other programming
-paradigms; functional and reactive programming. And now we will see which
-parts from the two paradigms FRP makes use of and how it makes FRP possible.
+paradigms; functional and reactive programming. The original goal of FRP is to
+unite the statefulness and mutative nature of user interfaces with the
+semantic determinism and rigorous reasoning of pure functional programming.
 
 At its most basic level, FRP is about abstractions for representing a value as
 it changes over time. Historically, this has been difficult to achieve using
 traditional imperative programming. The imperative programming paradigm is
 temporally discrete in nature, which has only allowed for indirect
 representation of discretely evolving values.
+
+We will now look at which parts from the two paradigms FRP makes use of and
+how it makes FRP possible.
 
 ### Reactive Programming
 
