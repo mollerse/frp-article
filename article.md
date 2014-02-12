@@ -41,42 +41,27 @@ C#, Java, Scala, Objective-C, Ruby, and more.
 ## Theoretical foundation
 
 Functional reactive programming is the combination of two other programming
-paradigms; functional and reactive programming. At its most basic level, FRP is
-about abstractions for representing a value as it changes over time. FRP has two
-different ways of representing a value that changes with time; continous and
-discrete.
+paradigms; functional and reactive programming. And now we will see which
+parts from the two paradigms FRP makes use of and how it makes FRP possible.
 
-A continous value, or behavior as it is commonly known in FRP, is the
-representation of something that always has a value when observed. For instance
-the current time or the height of a person. It does never not have a value.
-Discrete values, on the other hand, only have a value at certain times.
-
-Historically, this has been difficult to achieve using traditional imperative
-programming. The imperative programming paradigm is temporally discrete in
-nature, which has only allowed for indirect representation of discretely
-evolving values.
-
-Combining the notion of dataflow from reactive programming and side-effect free
-combinators from functional programming, we can define values that represent the
-two concepts of values over time directly. This gives us temporal reasoning as a
-first class citizen.
-
----
-Write about the theoretical foundation for FRP. This will most likely be the
-biggest or second biggest part of the article
+At its most basic level, FRP is about abstractions for representing a value as
+it changes over time. Historically, this has been difficult to achieve using
+traditional imperative programming. The imperative programming paradigm is
+temporally discrete in nature, which has only allowed for indirect
+representation of discretely evolving values.
 
 ### Reactive Programming
 
 Reactive programming is a programming paradigm that deals primarily with the
 flow of data and semantics for expressing how changes in state propagates
-through a dependency graph. Using reactive programming, a programmer can easily
-express data flows and set up dependencies and leave the propagation of change
-to the execution model of the language or liberary used.
+through a dependency graph. Using reactive programming, a programmer can
+easily express data flows and set up dependencies and leave the propagation of
+change to the execution model of the language or liberary used.
 
-The best example of data flow is the interaction between cells in a spreadsheet.
-If you change one cell, another cell which has a depencendy on that cell would
-automatically be updated. For instance with one cell being the sum of two other
-cells.
+The best example of data flow is the interaction between cells in a
+spreadsheet. If you change one cell, another cell which has a depencendy on
+that cell would automatically be updated. For instance with one cell being the
+sum of two other cells.
 
 This concept of data flow bears a resemblence to the well known observer
 pattern. Using the reactive semantics allows us to express the same as the
@@ -84,49 +69,35 @@ observer pattern, but easier and with more granularity. Where the observer
 pattern deals with whole objects, reactive data flows would be applicable to
 attributes of objects.
 
-
----
-Topics to cover:
-Dataflow, propagation of state through dependency graphs. Maybe some graphics?
-
-Keep implementation details out of it, stick to the theoretical stuff.
-
 ### Functional Programming
 
 ---
 Topics to cover:
 Combinators, sequences, immutability, side-effect free.
-
-Do we mention monads here, or leave it out?
-
 ### Functional Reactive Programming
-
----
-Some of the stuff in the introduction to this section could probably live here instead.
-
-
+FRP has two different ways of representing a value that changes with time;
+continous and discrete. A continous value, or behavior as it is commonly known
+in FRP, is the representation of something that always has a value when
+observed. For instance the current time or the height of a person. It does never
+not have a value. Discrete values, on the other hand, only have a value at
+certain times.
+Combining the notion of dataflow from reactive programming and side-effect free
+combinators from functional programming, we can define values that represent the
+two concepts of values over time directly. This gives us temporal reasoning as a
+first class citizen.
 ## FRP in practice
-
 Maybe a section with a more practical look at FRP. Which problems does it solve
 and why does it offer a worthwhile solution? This is probably the place to
 mention animation, interfaces and asynchronous/evented programming.
-
 Maybe also mention Reactive Extensions and similar libs here.
-
 ## FRP example
-
 A short example using Bacon.js.
-
 ### Bacon.js introduction
-
 Write a short introduction to Bacon.js and its API, mention EventStreams and
 Properties. Also mention terminating functions (like onValue, assign, log etc)
-
 ### Bacon.js example
-
 We will implement a simple SVG dot-drawer: tracking the mouse movement
 and when the mouse is clicked draw dots every `N` milliseconds.
-
 This kind of state management and input/output could easily become a
 very cumbersome task using traditional imperative code, but using
 FRP, this should be a breeze.
