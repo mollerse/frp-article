@@ -146,20 +146,23 @@ value. This can be expressed as a function of time `t` which yields a value
 `v`. Discrete values, on the other hand, is a sequence of values with an
 associated timestamp. These values are commonly refered to as events.
 
-## In Practice
+## FRP In Practice
 
-Maybe a section with a more practical look at FRP. Which problems does it solve
-and why does it offer a worthwhile solution? This is probably the place to
-mention animation, interfaces and asynchronous/evented programming.
+As mentioned a few times already, FRP really shines when used to program user
+interfaces. But there is nothing that limits us from applying the same
+theories to other environments that share the same characteristics as user
+interfaces.
 
-Maybe also mention Reactive Extensions and similar libs here.
+The characteristics that describe environments where FRP is well suited is
+time varying values which are the result of asynchronous events. A webserver
+getting a request from a client is one example.
 
 ## Practical Example
 
-One way to use functional reactive programming in Javascript is with
-the library Bacon.js. Bacon.js is created by Finish developer
-Juha Paananen from Reaktor. In this section we will see how Bacon.js
-can be used to achieve FRP in the browser.
+Many implementations across multiple languages exists today. We will take a
+closer look at Bacon.js which is a classical FRP implementation in Javascript.
+Bacon.js is created by Finish developer Juha Paananen from Reaktor. In this
+section we will see how Bacon.js can be used to achieve FRP in the browser.z
 
 We will use Bacon.js to implement a simple SVG dot-drawer:
 tracking the mouse movement and when the mouse button is pressed draw
