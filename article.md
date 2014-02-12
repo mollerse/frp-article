@@ -46,9 +46,9 @@ unite the statefulness and mutative nature of user interfaces with the
 semantic determinism and rigorous reasoning of pure functional programming.
 
 At its most basic level, FRP is about abstractions for representing a value as
-it changes over time. Historically, this has been difficult to achieve using
-traditional imperative programming. The imperative programming paradigm is
-temporally discrete in nature, which has only allowed for indirect
+it changes, or mutates, over time. Historically, this has been difficult to
+achieve using traditional imperative programming. The imperative programming
+paradigm is temporally discrete in nature, which has only allowed for indirect
 representation of discretely evolving values.
 
 We will now look at which parts from the two paradigms FRP makes use of and
@@ -97,6 +97,10 @@ functions. These take functions as inputs and produce functions as output.
 This class of functions are also known as combinators. The most well-known
 combinators are map, reduce and filter.
 
+When composing functions in this manner, we program declaratively. A
+declarative programming style is more concerned with the _what_ happens
+instead of the _how_ something happens.
+
 The reason immutability and purely functional functions are hard to reconcile
 with real world programming is that most important values are mutable to
 change. This becomes especially apparent in user interfaces where every user
@@ -104,17 +108,34 @@ action mutates a piece of the program state.
 
 ### Functional Reactive Programming
 
-FRP has two different ways of representing a value that changes with time;
-continous and discrete. A continous value, or behavior as it is commonly known
-in FRP, is the representation of something that always has a value when
-observed. For instance the current time or the height of a person. It does never
-not have a value. Discrete values, on the other hand, only have a value at
-certain times.
+When we combine the notion of data flow from reative programming and the pure,
+side-effect free, functions and combinators from functional programming, we get
+(classical) functional reactive programming.
 
-Combining the notion of dataflow from reactive programming and side-effect free
-combinators from functional programming, we can define values that represent the
-two concepts of values over time directly. This gives us temporal reasoning as a
-first class citizen.
+Because the semantics of reactive programming allows us to define datatypes
+that represent a value that handles its own mutation we can use that to
+introduce "safe" abstractions. Functions opreate only on theese abstracted
+datatypes and from the view of the function the state is immutable. All the
+mutation is left to the underlying implementation of the datatype.
+
+The way dependencies are set up in dataflow graphs is very compatible with the
+notion of immutability from functional programming. Data flows in only one
+direction, much like the way data is passed from function to funciton without
+ever mutating the original representation. This allows us to use the same
+method of composition in functional reactive programming as in functional
+programming.
+
+In functional reactive programming, we treat mutable values as time-varying,
+which is better suited to represent the temporal aspect of change. FRP has two
+different ways of representing a value that changes with time; continous and
+discrete.
+
+A continous value, or behavior as it is commonly known in FRP, is the
+representation of something that always has a value when observed. For
+instance the current time or the height of a person. It does never not have a
+value. This can be expressed as a function of time `t` which yields a value
+`v`. Discrete values, on the other hand, is a sequence of values with an
+associated timestamp.
 
 ## In Practice
 
