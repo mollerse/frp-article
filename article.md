@@ -135,7 +135,7 @@ representation of something that always has a value when observed. For
 instance the current time or the height of a person. It does never not have a
 value. This can be expressed as a function of time `t` which yields a value
 `v`. Discrete values, on the other hand, is a sequence of values with an
-associated timestamp.
+associated timestamp. These values are commonly refered to as events.
 
 ## In Practice
 
