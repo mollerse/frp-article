@@ -74,6 +74,7 @@ attributes of objects.
 ---
 Topics to cover:
 Combinators, sequences, immutability, side-effect free.
+
 ### Functional Reactive Programming
 FRP has two different ways of representing a value that changes with time;
 continous and discrete. A continous value, or behavior as it is commonly known
@@ -81,23 +82,34 @@ in FRP, is the representation of something that always has a value when
 observed. For instance the current time or the height of a person. It does never
 not have a value. Discrete values, on the other hand, only have a value at
 certain times.
+
 Combining the notion of dataflow from reactive programming and side-effect free
 combinators from functional programming, we can define values that represent the
 two concepts of values over time directly. This gives us temporal reasoning as a
 first class citizen.
+
 ## FRP in practice
+
 Maybe a section with a more practical look at FRP. Which problems does it solve
 and why does it offer a worthwhile solution? This is probably the place to
 mention animation, interfaces and asynchronous/evented programming.
+
 Maybe also mention Reactive Extensions and similar libs here.
+
 ## FRP example
+
 A short example using Bacon.js.
+
 ### Bacon.js introduction
+
 Write a short introduction to Bacon.js and its API, mention EventStreams and
 Properties. Also mention terminating functions (like onValue, assign, log etc)
+
 ### Bacon.js example
+
 We will implement a simple SVG dot-drawer: tracking the mouse movement
 and when the mouse is clicked draw dots every `N` milliseconds.
+
 This kind of state management and input/output could easily become a
 very cumbersome task using traditional imperative code, but using
 FRP, this should be a breeze.
