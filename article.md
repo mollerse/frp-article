@@ -1,7 +1,15 @@
 # Functional Reactive Programming
 
-Short ingress with some highlights and summaries of what FRP is and what we will
-cover in the article
+In this article we explore the history of functional reactive programming, and
+see that it is not necessarily as new at it can seem. Functional reactive
+programming is a merge of two different programming paradigms; functional
+and reactive. We will see what each of those is and how to use them in
+combination.
+
+After reading this article, you will have a working knowledge of what
+functional reactive programming is, and how to use it in javascrupt using
+a library called Bacon.js. We will see a practical example and some real
+life code.
 
 ## Background and History
 
