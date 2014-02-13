@@ -1,15 +1,13 @@
 # Functional Reactive Programming
 
-In this article we explore the history of functional reactive programming, and
-see that it is not necessarily as new at it can seem. Functional reactive
-programming is a merge of two different programming paradigms; functional
-and reactive. We will see what each of those are and how to use them in
-combination.
+Functional reactive programming is a merge of two different programming
+paradigms; functional and reactive. In this article we explore the history and
+theoretical foundation of functional reactive programming before diving into
+FRP in practice with an example in JavaScript using Bacon.js.
 
-After reading this article, you will have a working knowledge of what
-functional reactive programming is, and how to use it in javascript using
-a library called Bacon.js. We will see a practical example and some real
-life code.
+After reading this article, you will have a basic understanding of what
+functional reactive programming is, which benefits it gives and how to apply
+it to your daily work.
 
 ## Background and History
 
