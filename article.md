@@ -49,102 +49,64 @@ C#, Java, Scala, Objective-C, Ruby, and more.
 
 ## Theoretical foundation
 
-Functional reactive programming is the combination of two other programming
-paradigms; functional and reactive programming. The original goal of FRP is to
-unite the statefulness and mutative nature of user interfaces with the
-semantic determinism and rigorous reasoning of pure functional programming.
+The primary goal of functional reactive programming is to enable functional
+programming of user interfaces. Why does one want to program functionally?
+Functional programming gives the programmer tools to reason about code, both
+infromal and rigorous, through the use of immutability and pure functions.
 
-At its most basic level, FRP is about abstractions for representing a value as
-it changes, or mutates, over time. Historically, this has been difficult to
-achieve using traditional imperative programming. The imperative programming
-paradigm is temporally discrete in nature, which has only allowed for indirect
-representation of discretely evolving values.
+Immutability means that once a value has been instansiated, it does not
+change. Pure functions means that a function will always produce the same
+output given the same input.
 
-We will now look at which parts from the two paradigms FRP makes use of and
-how it makes FRP possible.
+To create more advanced behavior one can combine functions through other
+functions, which are known as higher order functions. These take functions as
+inputs and produce functions as output. This class of functions are also known
+as combinators. The most well-known combinators are map, reduce and filter.
+When composing functions in this manner, we program declaratively. A
+declarative programming style is more concerned with the _what_ happens
+instead of the _how_ something happens.
 
-### Reactive Programming
+If these traits are so great, why are they not found more often in modern
+programming? It has to do with the fact that many of the important attributes
+of programs are naturally mutable. This is especially true for user
+interfaces, where the user may mutate the state of the interface through
+actions.
+
+In addition to being mutable environments like user interfaces are often
+asynchronous in their behavior. This leaves us with an environment where the
+state may change at any point in time and outside the control of the program.
+In addition the order in which actions are performed is also important, so the
+temporal aspect of actions needs to be accounted for. This does seem largely
+at odds with the traits we want to obtain from functional programming. This is
+where reactive programming comes in.
 
 Reactive programming is a programming paradigm that deals primarily with the
 flow of data and semantics for expressing how changes in state propagates
-through a dependency graph. Using reactive programming, a programmer can
-easily express data flows and set up dependencies and leave the propagation of
-change to the execution model of the language or liberary used.
+through a dependency graph. Using reactive programming, a programmer is able
+to define datatypes that express data flows while leaving the task of actually
+progagating state to the execution model of the language or liberary used.
 
 The best example of data flow is the interaction between cells in a
 spreadsheet. If you change one cell, another cell which has a depencendy on
 that cell would automatically be updated. For instance with one cell being the
 sum of two other cells.
 
-This concept of data flow bears a resemblence to the well known observer
-pattern. Using the reactive semantics allows us to express the same as the
-observer pattern, but easier and with more granularity. Where the observer
-pattern deals with whole objects, reactive data flows would be applicable to
-attributes of objects.
+Combining the reactive datatypes with functional composition we arrive at
+functional reactive programming. Because the semantics of reactive programming
+allows us to define datatypes that represent a value that handles its own
+mutation we can use that to introduce "safe" abstractions. Functions opreate
+only on theese abstracted datatypes and from the view of the function the
+state is immutable. All the mutation is left to the underlying implementation
+of the datatype. We can now use the composition vocabulary from functional
+programming without compromising the traits we wanted in the first place.
 
-### Functional Programming
-
-Achieving rigorous and formal reasoning in combination with user interfaces
-was the original goal of FRP. This trait is enabled by what is known as pure
-functions. Pure functions are functions that depend only on their inputs and
-not the state of the program being run.
-
-Pure functions also does not mutate anything outside of itself. This helps
-eliminating side effects which is one of the main reasons pure functions
-enable formal reasoning and semantic determinism.
-
-Functions make up the core building block of functional programming, but they
-would not be very useful if they could not be composed and combined.
-Composition of functions depend on another trait of functional programming,
-which is immutability. Immutability means that once a value is instansiated it
-does not change. This means that we can take functions or data and combine
-them in many different ways without affecting the original representation of
-the function or data.
-
-To compose functions we use another class of functions known as higher order
-functions. These take functions as inputs and produce functions as output.
-This class of functions are also known as combinators. The most well-known
-combinators are map, reduce and filter.
-
-When composing functions in this manner, we program declaratively. A
-declarative programming style is more concerned with the _what_ happens
-instead of the _how_ something happens.
-
-The reason immutability and purely functional functions are hard to reconcile
-with real world programming is that most important values are mutable to
-change. This becomes especially apparent in user interfaces where every user
-action mutates a piece of the program state.
-
-### Functional Reactive Programming
-
-When we combine the notion of data flow from reative programming and the pure,
-side-effect free, functions and combinators from functional programming, we get
-(classical) functional reactive programming.
-
-Because the semantics of reactive programming allows us to define datatypes
-that represent a value that handles its own mutation we can use that to
-introduce "safe" abstractions. Functions opreate only on theese abstracted
-datatypes and from the view of the function the state is immutable. All the
-mutation is left to the underlying implementation of the datatype.
-
-The way dependencies are set up in dataflow graphs is very compatible with the
-notion of immutability from functional programming. Data flows in only one
-direction, much like the way data is passed from function to funciton without
-ever mutating the original representation. This allows us to use the same
-method of composition in functional reactive programming as in functional
-programming.
-
-In functional reactive programming, we treat mutable values as time-varying,
-which is better suited to represent the temporal aspect of change. FRP has two
-different ways of representing a value that changes with time; continous and
-discrete.
-
-A continous value, or behavior as it is commonly known in FRP, is the
-representation of something that always has a value when observed. For
-instance the current time or the height of a person. It does never not have a
-value. This can be expressed as a function of time `t` which yields a value
-`v`. Discrete values, on the other hand, is a sequence of values with an
-associated timestamp. These values are commonly refered to as events.
+Classical functional reactive programming deals with two different
+representations for values that vary with time. Behaviors, which are continous
+values, can be represented as a function of time `t` which yields a value `v`.
+Events, which are sequences of discrete events modelled as a list of value and
+time pairs `[(t, v)]`, to account for discrete phenomena. This way FRP
+succesfully deals with mutable and asynchronous environments while accounting
+for the temporal aspect.
 
 ## FRP In Practice
 
