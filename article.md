@@ -134,8 +134,8 @@ of domains.
 
 For this practical example, we will take a closer look at Bacon.js which is a
 classical FRP implementation in Javascript. Bacon.js is created by Finish
-developer Juha Paananen from Reaktor. In this section we will see how Bacon.js
-can be used to achieve FRP in the browser.z
+developer Juha Paananen. In this section we will see how Bacon.js can be used
+to achieve FRP in the browser.
 
 We will use Bacon.js to implement a simple SVG dot-drawer:
 tracking the mouse movement and when the mouse button is pressed draw
