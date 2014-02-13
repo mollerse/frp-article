@@ -130,11 +130,6 @@ mutable and asyncronous environments. And with the temporal aspect of actions
 being accounted for, FRP gives us a model which fits very well with these kind
 of domains.
 
-Most FRP implementations that exist are implemented for Haskell, but
-JavaScript is seeing a surge of new FRP liberaries. Reactive Extensions, while
-not explicitly focused on the functional parts of FRP, is also very popular
-these days.
-
 ## Practical Example
 
 For this practical example, we will take a closer look at Bacon.js which is a
