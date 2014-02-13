@@ -310,34 +310,31 @@ Microsoft Research Group and Yale University in 1997. Over the comming
 years, they improved their work and honed in on an working implementation
 of FRP.
 
-Functional reactive programming is a declerative programming paradigm,
-and a combination of functional and reactive programming. In functional
-programming we use combinators like `map`, `filter`, `reduce` and other
-pure higher order functions to create composits and avoid state management
-and side-effects. Reactive programming is often called data-flow programming.
-It defines semantics for expressing values dependent of other values and
-propagation of value changes in node graphs. A often used example of reactive
-data is spreadsheets. `=A1+A2` in Excel will automaticly update if either
-`A1` or `A2` changes. The data graph can be much more complex and can be more
-than just integers and numbers.
+Functional reactive programming is a combination of functional and reactive
+programming. Its primary goal is to reconcile the mutable and asyncronous
+nature of environments like user interfaces with the semantic determinism and
+rigorous reasoning enabled by pure functional programming. To achieve this
+goal FRP makes use of language level reactive programming, which gives the
+programmer reactive datatypes that abstract time-varying values. This enables
+the programmer to use purely functional functions and functional composition.
 
-FRP is a good fit with interface programming, or anywere handeling multiple
-data sources or outputs. FRP abstracts state handling from the naturally
-state-ful user interface, and allows us avoid most unwanted side-effects.
-As all values returned from combinators and functors are immutable we can
-create compositions and re-use values and expressions in different settings
-and situations.
+FRP is a good fit with interface programming, or domains with the same
+characterisitics. FPR gives the programmer a declarative language and high
+level abstractions to work with. These abstractions fit the way we reason
+about the world and capture the temporal aaspect of actions in a very good
+way.
 
 In recent years, FRP has become popular and we see many different
 implementations in various languages. Many implementations are based on
-Haskell, but the use of Javascript is also quite common. Bacon.js is
-an implementation that relies purly on Javascript and works great in both
-the browser and on the server using Node.js. Using Bacon.js we can treat
-events and properties as sequences and handle them using functional styles.
+Haskell, but Javascript is seeing a rise in popularity of FRP liberaries
+aswell.
 
-Functional Reactive Programming is ready to be used in projects and we see
-more examples of this. E.g. Netflix uses reactive programming to handle their
-APIs. You can easily use FRP with other front end libraries, like Backbone.
+Bacon.js is a Javascript library that gives the programmer the classical FRP
+datatypes of Behaviors and Events and a large API of functional combinators to
+work with. Being based purely on Javascript, Bacon.js works great in both the
+browser and on the server using Node.js. This makes it easy to start using FRP
+today, and it integrates very nicely with existing libraries and frameworks
+like jQuery and Backbone.js.
 
 [1]: http://conal.net/papers/icfp97/
 [2]: http://conal.net/papers/ActiveVRML/
