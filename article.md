@@ -3,7 +3,7 @@
 In this article we explore the history of functional reactive programming, and
 see that it is not necessarily as new at it can seem. Functional reactive
 programming is a merge of two different programming paradigms; functional
-and reactive. We will see what each of those is and how to use them in
+and reactive. We will see what each of those are and how to use them in
 combination.
 
 After reading this article, you will have a working knowledge of what
