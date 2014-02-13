@@ -163,7 +163,7 @@ Bacon.fromEventTarget($("button"), "click")
 We see that we can print string when a button is clicked. In most cases,
 Bacon.JS returns a new event stream or property, but `.onValue` returns
 a function to unsubscribe to the events. Bacon.js uses lazy evaluation
-internally, only pushing values if there is subscribers. For example,
+internally, only pushing values if there are subscribers. For example,
 without adding `.onValue` (or other methods adding subscribers,
 like `assign`) no value will get pushed.
 
