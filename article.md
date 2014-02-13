@@ -313,10 +313,12 @@ of FRP.
 Functional reactive programming is a combination of functional and reactive
 programming. Its primary goal is to reconcile the mutable and asyncronous
 nature of environments like user interfaces with the semantic determinism and
-rigorous reasoning enabled by pure functional programming. To achieve this
-goal, FRP makes use of language level reactive programming, which gives the
-programmer reactive datatypes that abstract time-varying values. This enables
-the programmer to use purely functional functions and functional composition.
+rigorous reasoning enabled by pure functional programming.
+
+To achieve this goal, FRP makes use of reactive programming. Using dataflow
+semantics to create abstractions that represents time-varying values. Using
+these abstractions enables the programmer to use pure functional programming
+while working with inheritly mutable data.
 
 FRP is a good fit with interface programming, or domains with the same
 characterisitics. FRP gives the programmer a declarative language and high
