@@ -7,7 +7,7 @@ and reactive. We will see what each of those are and how to use them in
 combination.
 
 After reading this article, you will have a working knowledge of what
-functional reactive programming is, and how to use it in javascrupt using
+functional reactive programming is, and how to use it in javascript using
 a library called Bacon.js. We will see a practical example and some real
 life code.
 
@@ -21,13 +21,13 @@ on Functional Programming [1].
 
 The academic paper introduces a collection of data types and functions in a
 system called FRAN (**F**unctional **R**eactive **AN**imations). FRAN in turn
-is preceeded by work done by Conal Elliot and the ActiveVRML modeling
-language. ActiveVRML was a declerative modeling language for defining simple,
+is preceeded by work done by Conal Elliot and the ActiveVRML modelling
+language. ActiveVRML was a declarative modelling language for defining simple,
 sophisticated and interactive animations [2].
 
 The implementation of FRAN was based on the programming language Haskell, which
 is an easy extendable functional programming language. As Haskell may have some
-problems with space leaks, FRAN did aswell. To try to fix this, Paul Hudak
+problems with space leaks, FRAN did as well. To try to fix this, Paul Hudak
 (et. al.) introduced Real Time FRP (RT-FRP) in a paper from 2001 [3]. RT-FRP
 made some simplifications to the model, but in turn lost some of the
 expressiveness of the FRAN system. A short year after introducing RT-FRP,
@@ -47,21 +47,21 @@ or [Bacon.js](https://github.com/baconjs/bacon.js) – which is written
 completely in Javascript. There are also implementations in languages like
 C#, Java, Scala, Objective-C, Ruby, and more.
 
-## Theoretical foundation
+## Theoretical Foundation
 
 The primary goal of functional reactive programming is to enable functional
 programming of user interfaces. Why does one want to program functionally?
 Functional programming gives the programmer tools to reason about code, both
-infromal and rigorous, through the use of immutability and pure functions.
+informal and rigorous, through the use of immutability and pure functions.
 
-Immutability means that once a value has been instansiated, it does not
+Immutability means that once a value has been instantiated, it does not
 change. Pure functions means that a function will always produce the same
 output given the same input.
 
-To create more advanced behavior one can combine functions through other
+To create more advanced behaviour one can combine functions through other
 functions, which are known as higher order functions. These take functions as
 inputs and produce functions as output. This class of functions are also known
-as combinators. The most well-known combinators are map, reduce and filter.
+as combinators. The most well-known combinators are `map`, `reduce` and `filter`.
 When composing functions in this manner, we program declaratively. A
 declarative programming style is more concerned with the _what_ happens
 instead of the _how_ something happens.
@@ -73,7 +73,7 @@ interfaces, where the user may mutate the state of the interface through
 actions.
 
 In addition to being mutable environments like user interfaces are often
-asynchronous in their behavior. This leaves us with an environment where the
+asynchronous in their behaviour. This leaves us with an environment where the
 state may change at any point in time and outside the control of the program.
 In addition the order in which actions are performed is also important, so the
 temporal aspect of actions needs to be accounted for. This does seem largely
@@ -84,28 +84,28 @@ Reactive programming is a programming paradigm that deals primarily with the
 flow of data and semantics for expressing how changes in state propagates
 through a dependency graph. Using reactive programming, a programmer is able
 to define datatypes that express data flows while leaving the task of actually
-progagating state to the execution model of the language or liberary used.
+propagating state to the execution model of the language or library used.
 
 The best example of data flow is the interaction between cells in a
-spreadsheet. If you change one cell, another cell which has a depencendy on
+spreadsheet. If you change one cell, another cell which has a dependency on
 that cell would automatically be updated. For instance with one cell being the
 sum of two other cells.
 
 Combining the reactive datatypes with functional composition we arrive at
 functional reactive programming. Because the semantics of reactive programming
 allows us to define datatypes that represent a value that handles its own
-mutation we can use that to introduce "safe" abstractions. Functions opreate
-only on theese abstracted datatypes and from the view of the function the
+mutation we can use that to introduce "safe" abstractions. Functions operate
+only on these abstracted datatypes and from the view of the function the
 state is immutable. All the mutation is left to the underlying implementation
 of the datatype. We can now use the composition vocabulary from functional
 programming without compromising the traits we wanted in the first place.
 
 Classical functional reactive programming deals with two different
-representations for values that vary with time. Behaviors, which are continous
+representations for values that vary with time. Behaviours, which are continuous
 values, can be represented as a function of time which yields a value `f(t) -> v`.
 Events, which are sequences of discrete events modelled as a list of value and
 time pairs `[(t, v)]`, to account for discrete phenomena. This way FRP
-succesfully deals with mutable and asynchronous environments while accounting
+successfully deals with mutable and asynchronous environments while accounting
 for the temporal aspect.
 
 ## FRP In Practice
@@ -115,10 +115,10 @@ interfaces. But there is nothing that limits us from applying the same
 theories to other environments that share the same characteristics as user
 interfaces.
 
-By using the FRP style of programming we are able to instansiate datatypes,
+By using the FRP style of programming we are able to instantiate datatypes,
 which can represent a value that can change at varying times, and compose
 these datatypes using functional composition. Because all our combinators are
-pure and the datatypes are immutable we only need to instansiate each
+pure and the datatypes are immutable we only need to instantiate each
 representation once, the same goes for composed datatypes. This lends itself
 extremely well to code-reuse.
 
@@ -126,7 +126,7 @@ With FRP being at a high abstraction level and in a declarative style, we are
 able to achieve a great deal of functionality with rather few lines of code.
 With all state being managed internally by the reactive datatypes the
 programmer is freed from much of the cumbersome responsibility of working with
-mutable and asyncronous environments. And with the temporal aspect of actions
+mutable and asynchronous environments. And with the temporal aspect of actions
 being accounted for, FRP gives us a model which fits very well with these kind
 of domains.
 
@@ -301,11 +301,11 @@ mouseNewXY
 ```
 
 In this example we say that the socket is a socket instance of
-socket.io, and that it emits our mouse data on the channgel `data`.
+socket.io, and that it emits our mouse data on the channel `data`.
 
 In addition we would have to emit data using our `mouseNewXY` data type.
 
-## Summary / Wrapup
+## Summary / Wrap-up
 
 Write a short summary here.
 
