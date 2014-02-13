@@ -314,23 +314,23 @@ Functional reactive programming is a combination of functional and reactive
 programming. Its primary goal is to reconcile the mutable and asyncronous
 nature of environments like user interfaces with the semantic determinism and
 rigorous reasoning enabled by pure functional programming. To achieve this
-goal FRP makes use of language level reactive programming, which gives the
+goal, FRP makes use of language level reactive programming, which gives the
 programmer reactive datatypes that abstract time-varying values. This enables
 the programmer to use purely functional functions and functional composition.
 
 FRP is a good fit with interface programming, or domains with the same
-characterisitics. FPR gives the programmer a declarative language and high
+characterisitics. FRP gives the programmer a declarative language and high
 level abstractions to work with. These abstractions fit the way we reason
-about the world and capture the temporal aaspect of actions in a very good
+about the world and capture the temporal aspect of actions in a very good
 way.
 
 In recent years, FRP has become popular and we see many different
 implementations in various languages. Many implementations are based on
 Haskell, but Javascript is seeing a rise in popularity of FRP liberaries
-aswell.
+as well.
 
 Bacon.js is a Javascript library that gives the programmer the classical FRP
-datatypes of Behaviors and Events and a large API of functional combinators to
+datatypes of Behaviours and Events and a large API of functional combinators to
 work with. Being based purely on Javascript, Bacon.js works great in both the
 browser and on the server using Node.js. This makes it easy to start using FRP
 today, and it integrates very nicely with existing libraries and frameworks
