@@ -102,7 +102,7 @@ programming without compromising the traits we wanted in the first place.
 
 Classical functional reactive programming deals with two different
 representations for values that vary with time. Behaviors, which are continous
-values, can be represented as a function of time `t` which yields a value `v`.
+values, can be represented as a function of time which yields a value `f(t) -> v`.
 Events, which are sequences of discrete events modelled as a list of value and
 time pairs `[(t, v)]`, to account for discrete phenomena. This way FRP
 succesfully deals with mutable and asynchronous environments while accounting
