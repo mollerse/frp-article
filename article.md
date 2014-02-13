@@ -115,16 +115,32 @@ interfaces. But there is nothing that limits us from applying the same
 theories to other environments that share the same characteristics as user
 interfaces.
 
-The characteristics that describe environments where FRP is well suited is
-time varying values which are the result of asynchronous events. A webserver
-getting a request from a client is one example.
+By using the FRP style of programming we are able to instansiate datatypes,
+which can represent a value that can change at varying times, and compose
+these datatypes using functional composition. Because all our combinators are
+pure and the datatypes are immutable we only need to instansiate each
+representation once, the same goes for composed datatypes. This lends itself
+extremely well to code-reuse.
+
+With FRP being at a high abstraction level and in a declarative style, we are
+able to achieve a great deal of functionality with rather few lines of code.
+With all state being managed internally by the reactive datatypes the
+programmer is freed from much of the cumbersome responsibility of working with
+mutable and asyncronous environments. And with the temporal aspect of actions
+being accounted for, FRP gives us a model which fits very well with these kind
+of domains.
+
+Most FRP implementations that exist are implemented for Haskell, but
+JavaScript is seeing a surge of new FRP and RP liberaries. Reactive
+Extensions, while not explicitly focused on the functional of FRP, is also
+very popular these days.
 
 ## Practical Example
 
-Many implementations across multiple languages exists today. We will take a
-closer look at Bacon.js which is a classical FRP implementation in Javascript.
-Bacon.js is created by Finish developer Juha Paananen from Reaktor. In this
-section we will see how Bacon.js can be used to achieve FRP in the browser.z
+For this practical example, we will take a closer look at Bacon.js which is a
+classical FRP implementation in Javascript. Bacon.js is created by Finish
+developer Juha Paananen from Reaktor. In this section we will see how Bacon.js
+can be used to achieve FRP in the browser.z
 
 We will use Bacon.js to implement a simple SVG dot-drawer:
 tracking the mouse movement and when the mouse button is pressed draw
