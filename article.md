@@ -1,8 +1,8 @@
 # Functional Reactive Programming
 
-Functional reactive programming is a merge of two different programming
+Functional reactive programming (FRP) is a merge of two different programming
 paradigms; functional and reactive. In this article we explore the history and
-theoretical foundation of functional reactive programming before diving into
+theoretical foundation of FRP before diving into
 FRP in practice with an example in JavaScript using Bacon.js.
 
 After reading this article, you will have a basic understanding of what
@@ -337,6 +337,17 @@ work with. Being based purely on Javascript, Bacon.js works great in both the
 browser and on the server using Node.js. This makes it easy to start using FRP
 today, and it integrates very nicely with existing libraries and frameworks
 like jQuery and Backbone.js.
+
+## Resources:
+
+1. FRAN/Classic FRP: http://conal.net/papers/icfp97/
+2. ActiveVRML: http://conal.net/papers/ActiveVRML/
+3. RT-FRP: http://dl.acm.org/citation.cfm?id=507654
+4. ED-RFP: http://link.springer.com/chapter/10.1007/3-540-45587-6_11
+5. Push/Pull FRP: http://conal.net/papers/push-pull-frp/push-pull-frp.pdf
+6. Bacon.js: https://github.com/baconjs/bacon.js
+7. Elm: http://elm-lang.org
+8. Flapjax: http://www.flapjax-lang.org/
 
 [1]: http://conal.net/papers/icfp97/
 [2]: http://conal.net/papers/ActiveVRML/
