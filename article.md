@@ -2,8 +2,8 @@
 
 Functional reactive programming (FRP) is a merge of two different programming
 paradigms; functional and reactive. In this article we explore the history and
-theoretical foundation of FRP before diving into
-FRP in practice with an example in JavaScript using Bacon.js.
+theoretical foundation of FRP before diving into FRP in practice with an
+example in JavaScript using Bacon.js.
 
 After reading this article, you will have a basic understanding of what
 functional reactive programming is, which benefits it gives and how to apply
@@ -195,7 +195,7 @@ var $svg = $('svg'),
 
 In this code we start of by fetching our SVG element. With that element,
 we create three different event streams: `mouseMove` - a property
-(behaviour in traditional FRP lingo), that holds information about
+(behaviour in classical FRP lingo), that holds information about
 the position of the mouse. `mouseDown` - a discrete reactive
 data type that is triggered each time a mouse is clicked. Note the
 transformation on the end. By default, using `.fromEventTarget`
