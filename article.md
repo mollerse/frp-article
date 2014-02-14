@@ -154,8 +154,8 @@ data types from callbacks, from arrays, constant intervals and polling.
 In the most simplest form we can react to an event like so:
 
 ```javascript
-Bacon.fromEventTarget($("button"), "click")
-  .onValue(function() { console.log("FRP!"); })
+bacon.fromEventTarget($('button'), 'click')
+     .onValue(function() { console.log('FRP!'); })
 ```
 
 We see that we can print string when a button is clicked. In most cases,
@@ -166,8 +166,8 @@ without adding `.onValue` (or other methods adding subscribers,
 like `assign`) no value will get pushed.
 
 ```javascript
-Bacon.fromEventTarget($("button"), "click")
-  .doAction(function() { console.log("FRP!"); })
+bacon.fromEventTarget($('button'), 'click')
+     .doAction(function() { console.log('FRP!'); })
 ```
 
 Prints nothing, even if the button is clicked.
@@ -190,7 +190,7 @@ a property of mouse movements.
 var $svg = $('svg'),
     mouseMove = bacon.fromEventTarget($svg, 'mousemove'),
     mouseDown = bacon.fromEventTarget($svg, 'mousedown').map(true),
-    mouseUp = bacon.fromEventTarget($svg, 'mouseup').map(false);
+    mouseUp   = bacon.fromEventTarget($svg, 'mouseup').map(false);
 ```
 
 In this code we start of by fetching our SVG element. With that element,
@@ -283,7 +283,7 @@ isClickDown
   .map(function (down) {
     return down ? 'Yes' : 'No';
   })
-  .assign($('.mouse-down'), 'text')
+  .assign($('.mouse-down'), 'text');
 ```
 
 We can use `isClickDown` again, without having to think about it's
